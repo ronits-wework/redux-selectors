@@ -3,19 +3,23 @@ import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 
 const AddTodo = ({ dispatch }) => {
-  let input;
+  let nameInput;
+  let estimateInput;
 
   return (
     <div>
       <form onSubmit={e => {
         e.preventDefault();
-        if (!input.value.trim()) {
+        const estimate = parseInt(estimateInput.value);
+        if (!nameInput.value.trim() || isNaN(estimate)) {
           return
         }
-        dispatch(addTodo(input.value));
-        input.value = ''
+        dispatch(addTodo(nameInput.value, estimate));
+        nameInput.value = '';
+        estimateInput.value = 0;
       }}>
-        <input ref={node => input = node} />
+        Name: <input ref={node => nameInput = node} />
+        Estimate: <input ref={node => estimateInput = node} />
         <button type="submit">
           Add Todo
         </button>
