@@ -7,7 +7,7 @@ const todos = (state = [], action) => {
           id: action.id,
           text: action.text,
           completed: false,
-          estimate: action.estimate
+          storyPoints: action.storyPoints
         }
       ];
     case 'TOGGLE_TODO':
