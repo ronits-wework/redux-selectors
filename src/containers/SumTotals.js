@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 const SumTotals = ({ totalStoryPoints }) => {
   return (
@@ -7,6 +8,10 @@ const SumTotals = ({ totalStoryPoints }) => {
       <div>Total story points: {totalStoryPoints}</div>
     </div>
   )
+};
+
+SumTotals.propTypes = {
+  totalStoryPoints: PropTypes.number.isRequired
 };
 
 const mapStateToProps = (state, ownProps) => ({

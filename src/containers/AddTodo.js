@@ -16,7 +16,7 @@ const AddTodo = ({ dispatch }) => {
         }
         dispatch(addTodo(nameInput.value, storyPoints));
         nameInput.value = '';
-        storyPointInput.value = 0;
+        storyPointInput.value = '';
       }}>
         Name: <input ref={node => nameInput = node} />
         Story points: <input ref={node => storyPointInput = node} />
