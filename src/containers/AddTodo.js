@@ -12,7 +12,7 @@ const AddTodo = ({ dispatch }) => {
         e.preventDefault();
         const storyPoints = parseInt(storyPointInput.value);
         if (!nameInput.value.trim() || isNaN(storyPoints)) {
-          return
+          return;
         }
         dispatch(addTodo(nameInput.value, storyPoints));
         nameInput.value = '';
