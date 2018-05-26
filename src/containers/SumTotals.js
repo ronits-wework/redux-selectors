@@ -14,7 +14,7 @@ SumTotals.propTypes = {
   totalStoryPoints: PropTypes.number.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   totalStoryPoints: state.todos.reduce(
     function(sum, todo) {
       return sum + todo.storyPoints;
