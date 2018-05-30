@@ -13,7 +13,7 @@ const Todo = ({ onClick, completed, text, storyPoints }) => (
 );
 
 Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 };
