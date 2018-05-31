@@ -20,24 +20,24 @@ export const getVisibleTodos = createSelector(
   }
 );
 
-const getTotalEstimatesForTodos = (todos) => {
+const getTotalStoryPointsForTodos = (todos) => {
   return todos.reduce(
     function (sum, todo) {
-      return sum + todo.estimate;
+      return sum + todo.storyPoints;
     }
     , 0);
 };
 
-export const getTotalEstimates = createSelector(
+export const getTotalStoryPoints = createSelector(
   [getTodos],
   (todos) => {
-    return getTotalEstimatesForTodos(todos);
+    return getTotalStoryPointsForTodos(todos);
   }
 );
 
-export const getTotalVisibleEstimates = createSelector(
+export const getTotalVisibleStoryPoints = createSelector(
   [getVisibleTodos],
   (todos) => {
-    return getTotalEstimatesForTodos(todos);
+    return getTotalStoryPointsForTodos(todos);
   }
 );

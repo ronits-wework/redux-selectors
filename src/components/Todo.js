@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Todo = ({ onClick, completed, text, estimate }) => (
+const Todo = ({ onClick, completed, text, storyPoints }) => (
   <li
     onClick={onClick}
     style={{
       textDecoration: completed ? 'line-through' : 'none'
     }}
   >
-    {text + ', ' + estimate}
+    {text + ', ' + storyPoints}
   </li>
 );
 

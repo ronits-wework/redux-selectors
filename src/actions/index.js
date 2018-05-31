@@ -1,9 +1,9 @@
 let nextTodoId = 0;
-export const addTodo = (text, estimate) => ({
+export const addTodo = (text, storyPoints) => ({
   type: 'ADD_TODO',
   id: nextTodoId++,
   text,
-  estimate
+  storyPoints
 });
 
 export const setVisibilityFilter = filter => ({
