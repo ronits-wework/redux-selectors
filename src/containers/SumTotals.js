@@ -1,19 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getTotalEstimates, getTotalVisibleEstimates } from '../selectors'
+import { getTotalStoryPoints, getTotalVisibleStoryPoints } from '../selectors'
 
-const SumTotals = ({ totalEstimates, totalVisibleEstimates }) => {
+const SumTotals = ({ totalStoryPoints, totalVisibleStoryPoints }) => {
   return (
     <div>
-      <div>Total estimates: {totalEstimates}</div>
-      <div>Total visible estimates: {totalVisibleEstimates}</div>
+      <div>Total story points: {totalStoryPoints}</div>
+      <div>Total visible story points: {totalVisibleStoryPoints}</div>
     </div>
   )
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  totalEstimates: getTotalEstimates(state),
-  totalVisibleEstimates: getTotalVisibleEstimates(state)
+const mapStateToProps = (state) => ({
+  totalStoryPoints: getTotalStoryPoints(state),
+  totalVisibleStoryPoints: getTotalVisibleStoryPoints(state)
 });
 
 export default connect(

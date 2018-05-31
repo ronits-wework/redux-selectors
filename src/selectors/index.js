@@ -18,20 +18,20 @@ export const getVisibleTodos = (state) => {
   }
 };
 
-const getTotalEstimatesForTodos = (todos) => {
+const getTotalStoryPointsForTodos = (todos) => {
   return todos.reduce(
     function (sum, todo) {
-      return sum + todo.estimate;
+      return sum + todo.storyPoints;
     }
     , 0);
 };
 
-export const getTotalEstimates = (state) => {
+export const getTotalStoryPoints = (state) => {
   const todos = getTodos(state);
-  return getTotalEstimatesForTodos(todos);
+  return getTotalStoryPointsForTodos(todos);
 };
 
-export const getTotalVisibleEstimates = (state) => {
+export const getTotalVisibleStoryPoints = (state) => {
   const todos = getVisibleTodos(state);
-  return getTotalEstimatesForTodos(todos);
+  return getTotalStoryPointsForTodos(todos);
 };

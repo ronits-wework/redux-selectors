@@ -4,22 +4,22 @@ import { addTodo } from '../actions'
 
 const AddTodo = ({ dispatch }) => {
   let nameInput;
-  let estimateInput;
+  let storyPointInput;
 
   return (
     <div>
       <form onSubmit={e => {
         e.preventDefault();
-        const estimate = parseInt(estimateInput.value);
-        if (!nameInput.value.trim() || isNaN(estimate)) {
+        const storyPoints = parseInt(storyPointInput.value);
+        if (!nameInput.value.trim() || isNaN(storyPoints)) {
           return
         }
-        dispatch(addTodo(nameInput.value, estimate));
+        dispatch(addTodo(nameInput.value, storyPoints));
         nameInput.value = '';
-        estimateInput.value = 0;
+        storyPointInput.value = '';
       }}>
         Name: <input ref={node => nameInput = node} />
-        Estimate: <input ref={node => estimateInput = node} />
+        Story points: <input ref={node => storyPointInput = node} />
         <button type="submit">
           Add Todo
         </button>
