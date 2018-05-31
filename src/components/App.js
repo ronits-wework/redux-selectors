@@ -6,6 +6,7 @@ import '../styles/app.css'
 
 const App = () => (
   <div>
+    <h2>Todo List</h2>
     <AddTodo />
     <VisibleTodoList />
     <Footer />
